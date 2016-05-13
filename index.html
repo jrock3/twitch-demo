@@ -3,17 +3,39 @@
 <html lang="en">
   <head>
     <title></title>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="shortcut icon" href="favicon.ico" >
+    <style>
+	    * {box-sizing: border-box}
+		p, h1, ul, li {margin: 0; padding: 0}
+		body {font-family: sans-serif}
+		h1 {margin: 0; padding: 0; color: white;}
+		li {list-style-type: none; height: 50px; width: 100%; background: #649668; border-bottom: 2px solid white}
+		
+		.content {width: 600px; background: #ccc; margin: 50px auto 0 auto}
+		
+		.head {padding: 4%; height: 75px; width: 100%; background: #777764; border-bottom: 2px solid white}
+		
+		.title {float: left}
+		.options {float: right; padding-top: 9px; font-size: 14px;}
+		.current {color: #E0E262}
+	</style>
 </head>
 
 <body>
-
-
-
+ <section class="content">
+   <div class="head">
+     <div class="title">
+     <h1>Twitch Streamers</h1>
+     </div>
+     <div class="options">
+       <p><span class="current">All</span> | Online | Offline</p>
+     </div>
+   </div>
+   <ul>
+     <li></li>
+     <li></li>
+     <li></li>
+   </ul>
+ </section>
 </body>
 </html>
+
