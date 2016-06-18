@@ -3,25 +3,29 @@
 <html lang="en">
   <head>
     <title></title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <style>
 	    * {box-sizing: border-box}
+		body .row {margin: 0}
 		p, h1, ul, li {margin: 0; padding: 0}
 		body {font-family: sans-serif}
 		h1 {margin: 0; padding: 0; color: white;}
-		li {list-style-type: none; height: 50px; width: 100%; background: #649668; border-bottom: 2px solid white}
 		
 		.content {width: 600px; background: #ccc; margin: 50px auto 0 auto}
 		
-		.head {padding: 4%; height: 75px; width: 100%; background: #777764; border-bottom: 2px solid white}
+		.head {padding: 25px; height: 75px; width: 100%; background: #777764; border-bottom: 2px solid white}
 		
 		.title {float: left}
 		.options {float: right; padding-top: 9px; font-size: 14px;}
-		.current {color: #E0E262}
+		.current {color: #d5d693}
+		
+		.users div {padding: 15px 25px; color: #d5d693; list-style-type: none; height: 50px; background: #649668; border-bottom: 2px solid white}
 	</style>
 </head>
 
-<body>
- <section class="content">
+<body ng-app="twitchApp">
+ <section class="content" ng-controller="TwitchCtrl">
    <div class="head">
      <div class="title">
      <h1>Twitch Streamers</h1>
@@ -30,12 +34,18 @@
        <p><span class="current">All</span> | Online | Offline</p>
      </div>
    </div>
-   <ul>
-     <li></li>
-     <li></li>
-     <li></li>
-   </ul>
+   <div class="row users" ng-repeat="item in list">
+     <div class="col-xs-2">Picture</div>
+     <div class="col-xs-5">{{item}}</div>
+     <div class="col-xs-5">{{status}}</div>
+   </div>
+   
  </section>
+ <!-- JS -->
+ <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+ <script src="app.js"></script>
 </body>
 </html>
 
