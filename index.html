@@ -11,6 +11,8 @@
 		p, h1, ul, li {margin: 0; padding: 0}
 		body {font-family: sans-serif; background: black}
 		h1 {margin: 0; padding: 0; color: white;}
+		a {color: #d5d693}
+		a:hover {color: #d5d693}
 		
 		.content {width: 600px; background: #ccc; margin: 50px auto 0 auto}
 		
@@ -20,7 +22,9 @@
 		.options {float: right; padding-top: 9px; font-size: 14px;}
 		.current {color: #d5d693}
 		
-		.users div {padding: 15px 25px; color: #d5d693; list-style-type: none; height: 50px; background: #649668; border-bottom: 2px solid black}
+		.users div {padding: 15px 25px; color: #d5d693; list-style-type: none; height: 60px; background: #649668; border-bottom: 2px solid black}
+		.off div {background: #475651; color: #ccc}
+		.off a, .off a:hover {color: #ccc}
 	</style>
 </head>
 
@@ -30,14 +34,11 @@
      <div class="title">
      <h1>Twitch Streamers</h1>
      </div>
-     <div class="options">
-       <p><span class="current">All</span> | Online | Offline</p>
-     </div>
    </div>
-   <div class="row users" ng-repeat="item in list">
-     <div class="col-xs-2">Picture</div>
-     <div class="col-xs-5">{{item}}</div>
-     <div class="col-xs-5">{{status}}</div>
+   <div class="row users {{item.style}}" ng-repeat="item in list | orderBy:'order'">
+     <div class="col-xs-2"><img class="img-responsive" style="height: 35px" ng-src="{{item.logo}}"></div>
+     <div class="col-xs-5"><a ng-href="{{item.url}}">{{item.name}}</a></div>
+     <div class="col-xs-5">{{item.status}}</div>
    </div>
    
  </section>
